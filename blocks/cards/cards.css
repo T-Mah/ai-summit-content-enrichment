@@ -105,3 +105,97 @@
 .cards.project .cards-card-body * {
   color: white;
 }
+
+/* Team cards modal */
+.cards-modal-hidden {
+  display: none;
+}
+
+.cards-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cards-modal.visible {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.cards-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cards-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  margin: auto;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #00bfff;
+  border-radius: 16px;
+  box-shadow: 0 0 30px #00bfff60, 0 16px 48px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+  z-index: 1001;
+}
+
+.cards-modal.visible .cards-modal-content {
+  transform: scale(1);
+}
+
+.cards-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cards-modal-close:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.cards-modal-body {
+  padding: 32px;
+  color: #333;
+}
+
+.cards-modal-body p {
+  margin: 0 0 16px;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.cards-modal-body p:last-child {
+  margin-bottom: 0;
+}
+
+.cards-modal-body a {
+  color: #0077cc;
+}
+
+.cards-modal-body a:hover {
+  color: #005599;
+}
