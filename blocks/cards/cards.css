@@ -12,6 +12,8 @@
   background-color: var(--background-color);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 0 8px #00ffff60;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .cards > ul > li:nth-child(3n+1) {
@@ -65,4 +67,41 @@
 
 .cards.team > ul > li:nth-child(5) {
   grid-column: 4 / span 2;
+}
+
+/* Project cards: full-bleed image with overlaid text */
+.cards.project > ul > li {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards.project .cards-card-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cards.project .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: unset;
+}
+
+.cards.project .cards-card-body {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+  margin: 0;
+  padding: 16px;
+}
+
+.cards.project .cards-card-body * {
+  color: white;
 }
